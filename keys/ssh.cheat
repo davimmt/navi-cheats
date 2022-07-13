@@ -1,0 +1,9 @@
+% ssh, key-gen, pri-pub
+
+# generate private and public keys
+ssh-keygen -b 4096 -t rsa -f "$key".pem -q -N ""
+
+% ssh, key-gen, pub
+
+# extract public ssh key from private
+ssh-keygen -y -f "$key".pem > "$key".pub

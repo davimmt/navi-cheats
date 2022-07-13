@@ -1,0 +1,4 @@
+% aws, sts
+
+# check current auth credentials user
+aws sts get-caller-identity

@@ -1,0 +1,4 @@
+% aws, ec2
+
+# list ec2 instances by name tag
+aws ec2 describe-instances --query "Reservations[*].Instances[*].{id: InstanceId, name: Tags[?Key=='Name'] | [0].Value, env: Tags[?Key=='Environment'] | [0].Value, ip: PrivateIpAddress, squad: Tags[?Key=='Squad'] | [0].Value}" --output table --filters "Name=instance-state-name,Values=running" "Name=tag:Name,Values=*<name>*"

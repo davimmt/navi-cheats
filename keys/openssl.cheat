@@ -1,0 +1,14 @@
+% openssl, genrsa
+
+# generate private key
+openssl genrsa -out "$key".pem 4096
+
+% openssl, pubout
+
+# extract public key from private
+openssl rsa -in "$key".pem -pubout > "$key".pub
+
+% openssl, genrsa, pri-pub
+
+# genereta private and public keys
+openssl genrsa -out "$key.pem" 4096 && openssl rsa -in "$key".pem -pubout > "$key".pub
