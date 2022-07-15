@@ -1,0 +1,12 @@
+% kubernetes, kubectl
+
+# list pods
+kubectl get po
+
+# list pods namespace
+kubectl get po -n <namespace>
+
+$ namespace: kubectl get ns | awk '{print $1}' | tail +2
+
+# list pods all namespaces
+kubectl get po -A
