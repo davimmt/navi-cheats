@@ -1,5 +1,10 @@
 % kubernetes, kubectl
 
+# change default namespace
+kubectl config set-context --current --namespace=<namespace>
+
+$ namespace: kubectl get ns | awk '{print $1}' | tail +2
+
 # list pods
 kubectl get po
 
@@ -10,3 +15,23 @@ $ namespace: kubectl get ns | awk '{print $1}' | tail +2
 
 # list pods all namespaces
 kubectl get po -A
+
+# get secret data values
+kubectl get secret <secret> -o json | jq '.data | map_values(@base64d)'
+
+$ secret: kubectl get secret | awk '{print $1}' | tail +2
+
+# list all api-resources namespace
+kubectl api-resources --verbs=list --namespaced -o name -n <namespace> | xargs -n 1 kubectl get --show-kind --ignore-not-found
+
+$ namespace: kubectl get ns | awk '{print $1}' | tail +2
+
+# describe pod
+kubectl describe po -f <pod>
+
+$ pod: kubectl get po | awk '{print $1}' | tail +2
+
+# show pod logs
+kubectl logs -f <pod>
+
+$ pod: kubectl get po | awk '{print $1}' | tail +2

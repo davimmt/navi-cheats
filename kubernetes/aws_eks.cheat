@@ -1,0 +1,6 @@
+% kubernetes, kubectl, aws, eks
+
+# configure cluster
+aws eks update-kubeconfig --name <cluster>
+
+$ cluster: aws eks list-clusters | jq -r .clusters | jq -r 'values[]'
