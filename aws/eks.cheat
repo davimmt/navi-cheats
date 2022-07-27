@@ -1,0 +1,5 @@
+% aws, eks
+
+# Configures kubectl so that you can connect to an Amazon EKS cluster
+aws eks --region <region> update-kubeconfig --name 
+$ region: echo sa-east-1

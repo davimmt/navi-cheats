@@ -1,0 +1,9 @@
+% base64, encoding, encode
+
+# Encode string to base64
+echo -n "<decoded_string>" | base64 -w 0
+
+% base64, encoding, decode
+
+# Decode base64 string
+echo "<encoded_string>" | base64 -d
