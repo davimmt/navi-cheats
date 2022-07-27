@@ -27,7 +27,7 @@ kubectl api-resources --verbs=list --namespaced -o name -n <namespace> | xargs -
 $ namespace: kubectl get ns | awk '{print $1}' | tail +2
 
 # describe pod
-kubectl describe po -f <pod>
+kubectl describe po <pod>
 
 $ pod: kubectl get po | awk '{print $1}' | tail +2
 
