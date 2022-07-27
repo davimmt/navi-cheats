@@ -1,0 +1,7 @@
+% terraform, apply
+
+# plan destroy target
+terraform plan -destroy -target=
+
+# apply destroy target
+terraform apply -destroy -target=

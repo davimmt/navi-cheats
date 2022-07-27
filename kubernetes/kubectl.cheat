@@ -35,3 +35,21 @@ $ pod: kubectl get po | awk '{print $1}' | tail +2
 kubectl logs -f <pod>
 
 $ pod: kubectl get po | awk '{print $1}' | tail +2
+
+# get current context
+kubectl config current-context
+
+# get use context
+kubectl config use-context 
+
+# get pod
+kubectl get pod -A | grep 
+
+# delete deploy
+kubectl delete deploy 
+
+# apply yaml config file
+kubectl apply -f 
+
+# get ingress info
+kubectl get ingress -A | grep
