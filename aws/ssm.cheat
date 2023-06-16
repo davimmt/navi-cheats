@@ -11,6 +11,6 @@ aws ssm start-session --document-name "$document_arn" [--parameters "$key"="$val
 % aws, ssm, parameter
 
 # get ssm parameter
-aws ssm get-parameters --with-decryption --name <ssm_parameter_name> | jq -r '.Parameters[] | {name: .Name, value: .Value}'
+aws ssm get-parameters --with-decryption --name <ssm_parameter_name> | jq -r '.Parameters[].Value' # '.Parameters[] | {name: .Name, value: .Value}'
 
 $ ssm_parameter_name: aws ssm describe-parameters --query 'Parameters[].Name' | jq -r 'values[]'
