@@ -1,9 +1,0 @@
-% aws, ssm
-
-# connect/start session to instance
-aws ssm start-session --target <instance_id>
-
-% aws, ssm, document
-
-# use document
-aws ssm start-session --document-name "$document_arn" [--parameters "$key"="$value"] --target "$instance_id"
