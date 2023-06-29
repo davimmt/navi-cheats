@@ -18,7 +18,7 @@ $ ssm_parameter_name: aws ssm describe-parameters --query 'Parameters[].Name' | 
 % aws, ssm, parameter, value
 
 # get ssm parameter specific key
-aws ssm get-parameters --with-decryption --name <ssm_parameter_name> | jq -r '.Parameters[].Value' | jq -r '.<key>'
+aws ssm get-parameters --with-decryption --name <ssm_parameter_name> | jq -r '.Parameters[].Value' | jq -r '."<key>"'
 
 $ ssm_parameter_name: aws ssm describe-parameters --query 'Parameters[].Name' | jq -r 'values[]'
 $ key: aws ssm get-parameters --with-decryption --name <ssm_parameter_name> | jq -r '.Parameters[].Value' | jq -r 'keys[]'
