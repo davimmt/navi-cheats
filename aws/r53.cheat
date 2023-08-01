@@ -1,0 +1,10 @@
+% aws, r53
+
+% aws, r53, get, list, describe, record
+
+# get describe or list record on route53
+aws route53 list-resource-record-sets --hosted-zone-id <aws_r53_zone_id> --query "ResourceRecordSets[?Name == '"<domain>".']"
+
+$ domain_apex: echo "<domain>" | sed -r 's/(.*)\.(.*\.com.*)/\2/g'
+$ private_zone: echo -e 'true\nfalse' 
+$ aws_r53_zone_id: aws route53 list-hosted-zones --output json | jq -r ".HostedZones[] | select(.Name == \"<domain_apex>.\" and .Config.PrivateZone == <private_zone>) | .Id" | cut -d'/' -f3
